@@ -1,8 +1,8 @@
 var map;
 var markers = [];
-var mbtaKey = config.MBTAKEY;
+var mbtaKey = config.MBTAKEY; //not needed when you replace 'mbtaKey' with your own MBTA API key. 
 
-// load map
+// loads the map
 function init(){
 	var myOptions = {
 		zoom      : 14,
@@ -14,7 +14,7 @@ function init(){
   	addMarkers();
 }
 
-// Add bus markers to map
+// Adds the bus markers to the map at updated positions 
 async function addMarkers(){
 	// get bus data
 	var locations = await getBusLocations();
@@ -35,7 +35,7 @@ async function addMarkers(){
 	setTimeout(addMarkers,15000);
 } 
 
-// Request bus data from MBTA
+// Queries MBTA API for bus data - replace 'mbtaKey' with your own MBTA API key
 async function getBusLocations(){
 	var url = 'https://api-v3.mbta.com/vehicles?api_key=' + mbtaKey + '&filter[route]=1&include=trip';	
 	var response = await fetch(url);
