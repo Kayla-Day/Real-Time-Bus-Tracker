@@ -1,6 +1,6 @@
 var map;
 var markers = [];
-var mbtaKey = config.MBTAKEY; //not needed when you replace 'mbtaKey' with your own MBTA API key. 
+var mbtaKey = '22750ee8f38745378c40f260cd6ab949'; //not needed when you replace 'mbtaKey' with your own MBTA API key.
 
 // loads the map
 function init(){
